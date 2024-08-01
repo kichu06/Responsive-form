@@ -1,0 +1,141 @@
+@import 'variable'; // Ensure this path is correct and the file is properly defined
+
+// General styles
+body {
+    font-family: 'Karla', sans-serif; // Ensure 'Karla' is included
+    font-size: 16px;
+    color: $grey-medium;
+    background-color: $green-light;
+    margin: 0;
+}
+
+// Alignment container for the form
+.form-align {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+// Form container styles
+.form-container {
+    background-color: $white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 30px;
+
+    form {
+        display: grid;
+        gap: 1.5rem;
+
+        h1 {
+            font-size: 2em;
+            color: $grey-dark;
+            margin-bottom: 1rem;
+            margin: 0px 0px 10px 0px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            label {
+                font-weight: bold;
+                margin-bottom: 0.25rem;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                padding: 0.5rem;
+                border: 1px solid $green-medium;
+                border-radius: 4px;
+                font-size: 16px;
+                box-sizing: border-box;
+
+                &:focus {
+                    outline: 1px solid $green-medium;
+                }
+
+                &.error-border {
+                    border: 2px solid $red;
+                }
+            }
+
+            textarea {
+                resize: vertical;
+                min-height: 100px;
+                width: 100%;
+            }
+
+            .checkbox-group {
+                display: flex;
+                gap: 1rem;
+
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    flex: 1;
+                    border: 1px solid $green-medium;
+                    padding: 0.5rem;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    background-color: $white;
+                }
+
+            }
+        }
+
+        .form-group button {
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            background-color: $green-medium;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+
+            &:hover {
+                background-color: $grey-dark;
+            }
+        }
+    }
+}
+
+.error-message {
+    color: $red;
+    font-size: 0.875em;
+    margin: 0.25em 0 0;
+}
+
+// Media query for mobile devices with a max-width of 586px
+@media (max-width: 586px) {
+    .form-align {
+        flex-direction: column; // Ensure form alignment stacks vertically
+        padding: 0px;
+        height: 100vh;
+    }
+
+    .form-container {
+        padding: 20px;
+        max-width: 100%; // Allow the form to use the full width of its container
+    }
+
+    form {
+        display: flex;
+        flex-direction: column; // Stack form elements vertically
+        gap: 1rem;
+    }
+
+    .form-group {
+        flex-direction: column; // Stack form-group elements vertically
+    }
+
+    .checkbox-group {
+        flex-direction: column; // Stack checkbox-group items vertically
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,49 @@
+@import 'variable';
+
+.toast {
+
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $grey-dark;
+    color: $white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 4px;
+    z-index: 1000;
+    width: 100%;
+    max-width: 300px;
+
+    .toast-title {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        margin: 5px;
+    }
+
+    .toast-content {
+        font-size: 12px;
+        margin: 5px;
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+@media (max-width: 586px) {
+    .toast {
+        max-width: none;
+        ;
+    }
+
+
+}
